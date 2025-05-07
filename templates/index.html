@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvard Reference Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Harvard Reference Generator</h1>
+        <p>Paste your text below to generate a Harvard-style reference:</p>
+        <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+        <div class="buttons">
+            <button id="generateBtn">Generate Reference</button>
+            <button id="guideBtn">Usage Guide</button>
+        </div>
+    </div>
+
+    <div class="result-container hidden">
+        <h2>Generated Reference</h2>
+        <div id="outputText" class="output-text"></div>
+        <div class="result-buttons">
+            <button id="copyBtn">Copy to Clipboard</button>
+            <button id="backBtn">Back</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
