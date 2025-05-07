@@ -7,35 +7,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div id="space-background">
-        <!-- 星星和流星动画 -->
-        <div class="star" style="top: 10%; left: 20%;"></div>
-        <div class="star" style="top: 30%; left: 50%;"></div>
-        <div class="star" style="top: 50%; left: 80%;"></div>
-        <div class="shooting-star" style="top: 5%; left: 90%;"></div>
+<div id="space-background"></div>
+<div class="container">
+    <h1>Harvard Reference Generator</h1>
+    <p>Paste your text below to generate a Harvard-style reference:</p>
+    <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+    <div class="buttons">
+        <button id="generateBtn">Generate Reference</button>
+        <button id="guideBtn">Usage Guide</button>
     </div>
-    <div class="container">
-        <h1>Harvard Reference Generator</h1>
-        <p>Paste your text below to generate a Harvard-style reference:</p>
-        <textarea id="inputText" placeholder="Paste your text here..."></textarea>
-        <div class="buttons">
-            <button id="generateBtn">Generate Reference</button>
-            <button id="guideBtn">Usage Guide</button>
-        </div>
-    </div>
+</div>
 
-    <div class="result-container hidden">
-        <h2>Generated Reference</h2>
-        <div id="outputText" class="output-text"></div>
-        <div class="result-buttons">
-            <button id="copyBtn">Copy to Clipboard</button>
-            <button id="backBtn">Back</button>
-        </div>
+<div class="result-container hidden">
+    <h2>Generated Reference</h2>
+    <div id="outputText" class="output-text"></div>
+    <div class="result-buttons">
+        <button id="copyBtn">Copy to Clipboard</button>
+        <button id="backBtn">Back</button>
     </div>
-    <!-- 版权说明 -->
-    <div class="copyright">
-        &copy; 2025 Made by Jerry Zhang & Peler Yuan. All rights reserved.
-    </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</div>
+<!-- 版权说明 -->
+<div class="copyright">
+    &copy; 2025 Made by Jerry Zhang & Peler Yuan. All rights reserved.
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

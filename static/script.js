@@ -1,17 +1,5 @@
 const spaceBackground = document.getElementById('space-background');
 
-// Create stars
-function createStars() {
-    for (let i = 0; i < 200; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.top = `${Math.random() * 100}%`;
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.animationDelay = `${Math.random() * 5}s`;
-        spaceBackground.appendChild(star);
-    }
-}
-
 // Create shooting stars
 function createShootingStars() {
     for (let i = 0; i < 5; i++) {
@@ -61,5 +49,40 @@ document.getElementById('backBtn').addEventListener('click', function () {
 });
 
 document.getElementById('guideBtn').addEventListener('click', function () {
-    alert('Usage Guide:\n1. Paste your text into the input box.\n2. Click "Generate Reference" to create a Harvard-style reference.\n3. Copy the result to your clipboard.');
+    window.location.href = "/doc";
 });
+
+// 生成星星和流星动画
+function createStars() {
+    const spaceBackground = document.getElementById('space-background');
+    const starCount = 100; // 星星数量
+    const shootingStarCount = 3; // 流星数量
+
+    // 生成星星
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${Math.random() * 2 + 1}s`; // 随机动画时长
+        spaceBackground.appendChild(star);
+    }
+
+    // 生成流星
+    for (let i = 0; i < shootingStarCount; i++) {
+        const shootingStar = document.createElement('div');
+        shootingStar.className = 'shooting-star';
+        shootingStar.style.top = `${Math.random() * 20}%`; // 流星从顶部 20% 以内开始
+        shootingStar.style.left = `${Math.random() * 100}%`;
+        shootingStar.style.animationDuration = `${Math.random() * 2 + 1}s`; // 随机动画时长
+        spaceBackground.appendChild(shootingStar);
+    }
+}
+
+
+// 初始化
+document.addEventListener('DOMContentLoaded', createStars);
+
+function returnToHome() {
+    window.location.href = '/'; // 跳转到主页
+}

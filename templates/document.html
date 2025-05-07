@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="space-background"></div>
+    <div class="container">
+        <h1>Usage Guide</h1>
+        <p>1. Visit UNSW Library and find your desired answer</p>
+        <img src="{{ url_for('static', filename='doc1.gif') }}" alt="doc1.gif" class="document-image">
+        <p>2. Scroll down the page to find `Detail` part</p>
+        <img src="{{ url_for('static', filename='doc2.gif') }}" alt="doc2.gif" class="document-image">
+        <p>3. Copy the whole part</p>
+        <img src="{{ url_for('static', filename='doc3.gif') }}" alt="doc3.gif" class="document-image">
+        <p>4. Paste it into the generator and simply click the button</p>
+        <img src="{{ url_for('static', filename='doc1.gif') }}" alt="doc1.gif" class="document-image">
+    </div>
+    <!-- 返回按钮 -->
+    <button id="returnBtn" class="return-btn" onclick="returnToHome()">Return to Home</button>
+    <!-- 版权说明 -->
+    <div class="copyright">
+        &copy; 2025 Made by Jerry Zhang & Peler Yuan. All rights reserved.
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
