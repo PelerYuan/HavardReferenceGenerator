@@ -8,7 +8,7 @@ body {
     background: #0d1117; /* 深色背景 */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 改为 flex-start，避免内容居中导致无法滚动 */
+    align-items: center; /* 恢复居中布局 */
     min-height: 100vh; /* 使 body 至少占满整个视口高度 */
 }
 
