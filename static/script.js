@@ -33,9 +33,16 @@ document.getElementById('generateBtn').addEventListener('click', function () {
 });
 
 document.getElementById('copyBtn').addEventListener('click', function () {
-    const outputText = document.getElementById('outputText').textContent;
+    const outputText = document.getElementById('outputText').innerText;
     navigator.clipboard.writeText(outputText).then(() => {
-        alert('Reference copied to clipboard!');
+        // 复制成功后更改按钮字样
+        const copyButton = document.getElementById('copyBtn');
+        copyButton.textContent = 'Copied!'; // 更改按钮文字
+        setTimeout(() => {
+            copyButton.textContent = 'Copy'; // 2 秒后恢复原文字
+        }, 1000);
+    }).catch((err) => {
+        console.error('Failed to copy text: ', err);
     });
 });
 
