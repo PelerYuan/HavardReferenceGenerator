@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harvard Reference Generator</title>
+    <title>Text Processor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <div id="space-background">
+        <!-- 星星和流星动画 -->
+        <div class="star" style="top: 10%; left: 20%;"></div>
+        <div class="star" style="top: 30%; left: 50%;"></div>
+        <div class="star" style="top: 50%; left: 80%;"></div>
+        <div class="shooting-star" style="top: 5%; left: 90%;"></div>
+    </div>
     <div class="container">
         <h1>Harvard Reference Generator</h1>
         <p>Paste your text below to generate a Harvard-style reference:</p>
@@ -25,7 +32,10 @@
             <button id="backBtn">Back</button>
         </div>
     </div>
-
+    <!-- 版权说明 -->
+    <div class="copyright">
+        &copy; 2025 Made by Jerry Zhang & Peler Yuan. All rights reserved.
+    </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

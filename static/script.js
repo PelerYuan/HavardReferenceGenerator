@@ -1,3 +1,32 @@
+const spaceBackground = document.getElementById('space-background');
+
+// Create stars
+function createStars() {
+    for (let i = 0; i < 200; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        spaceBackground.appendChild(star);
+    }
+}
+
+// Create shooting stars
+function createShootingStars() {
+    for (let i = 0; i < 5; i++) {
+        const shootingStar = document.createElement('div');
+        shootingStar.classList.add('shooting-star');
+        shootingStar.style.top = `${Math.random() * 100}%`;
+        shootingStar.style.left = `${Math.random() * 100}%`;
+        shootingStar.style.animationDelay = `${Math.random() * 10}s`;
+        spaceBackground.appendChild(shootingStar);
+    }
+}
+
+createStars();
+createShootingStars();
+
 document.getElementById('generateBtn').addEventListener('click', function () {
     const inputText = document.getElementById('inputText').value.trim();
     if (inputText) {
