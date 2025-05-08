@@ -39,7 +39,7 @@ document.getElementById('copyBtn').addEventListener('click', function () {
         const copyButton = document.getElementById('copyBtn');
         copyButton.textContent = 'Copied!'; // 更改按钮文字
         setTimeout(() => {
-            copyButton.textContent = 'Copy'; // 2 秒后恢复原文字
+            copyButton.textContent = 'Copy'; // 1 秒后恢复原文字
         }, 1000);
     }).catch((err) => {
         console.error('Failed to copy text: ', err);
