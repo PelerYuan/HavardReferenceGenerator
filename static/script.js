@@ -35,7 +35,7 @@ document.getElementById('generateBtn').addEventListener('click', function () {
                 document.querySelector('.result-container').classList.remove('hidden');
 
                 // Display generated reference
-                document.getElementById('outputText').textContent = harvardReference;
+                document.getElementById('outputText').innerHTML = harvardReference;
             })
             .catch(error => {
                 console.error('Error:', error);

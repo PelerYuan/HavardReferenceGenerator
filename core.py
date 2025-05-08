@@ -59,7 +59,7 @@ keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 values = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 date = dict(zip(keys, values))
 today = f'accessed {datetime.now().date().strftime("%d"f" {date.get(int(datetime.now().date().strftime("%m")[1:]))} %Y")}, '
-web = f'<URL>.'
+web = f'[URL].'
 
 def reference (src_txt):
     title = f'\'{src_txt.split('Title\n')[1].split('\nAuthors / creators')[0]}\', '

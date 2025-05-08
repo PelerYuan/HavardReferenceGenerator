@@ -17,6 +17,8 @@ def document():
 def generate_reference():
     input_text = request.json.get('inputText')
     harvard_reference = reference(input_text)
+    harvard_reference = harvard_reference.replace('\033[3m', '<i>')
+    harvard_reference = harvard_reference.replace('\033[0m', '</i>')
     return jsonify({'harvardReference': harvard_reference})
 
 if __name__ == '__main__':
