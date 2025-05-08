@@ -18,19 +18,33 @@ createShootingStars();
 document.getElementById('generateBtn').addEventListener('click', function () {
     const inputText = document.getElementById('inputText').value.trim();
     if (inputText) {
-        // Simulate generating Harvard reference (replace with actual logic)
-        const harvardReference = `Author, A. (Year). Title of the work. Journal Name, Volume(Issue), Page Range.`;
+        // 发送请求到 Flask 后端
+        fetch('/generate_reference', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({inputText: inputText}),
+        })
+            .then(response => response.json())
+            .then(data => {
+                const harvardReference = data.harvardReference;
 
-        // Hide input container and show result container
-        document.querySelector('.container').classList.add('hidden');
-        document.querySelector('.result-container').classList.remove('hidden');
+                // Hide input container and show result container
+                document.querySelector('.container').classList.add('hidden');
+                document.querySelector('.result-container').classList.remove('hidden');
 
-        // Display generated reference
-        document.getElementById('outputText').textContent = harvardReference;
+                // Display generated reference
+                document.getElementById('outputText').textContent = harvardReference;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     } else {
         alert('Please paste some text to generate a reference.');
     }
 });
+
 
 document.getElementById('copyBtn').addEventListener('click', function () {
     const outputText = document.getElementById('outputText').innerText;
